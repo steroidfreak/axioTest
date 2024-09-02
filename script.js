@@ -1,15 +1,15 @@
-const API_URL = 'https://wvf6q7huv9.execute-api.ap-southeast-1.amazonaws.com/';
-const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+const API_URL = "https://a37a2vmm2b.execute-api.ap-southeast-1.amazonaws.com/prod";
+// const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 
 async function sendMessageToChatGPT(message) {
   try {
     console.log('Sending message:', message);  // Log the message being sent
-const response = await axios.post(PROXY_URL + API_URL, 
+const response = await axios.post(API_URL, 
       { input: message },
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest'  // Required by CORS Anywhere
+          // 'X-Requested-With': 'XMLHttpRequest'  // Required by CORS Anywhere
         }
       }
     );
